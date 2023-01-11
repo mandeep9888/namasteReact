@@ -4,6 +4,7 @@
 ## week 1
 
 - What is Emmet?
+
 Emmet uses different abbreviations and short expression depending on what is passed and based upon that it dynamically convert abbreviations into full code.
 
 eg. inside html 
@@ -25,6 +26,7 @@ https://docs.emmet.io/abbreviations/syntax/
 
 ---
 - Difference between a Library and Framework?
+
 Both are written by developers to help us perform some common task, diference is in terms of 
 inversion on control, when using library we are incharge on flow of the application we choose when and where to call
 library in our code.
@@ -52,11 +54,13 @@ When data in react components changes, react will automatically re-render the co
 
 ---
 - What is crossorigin in script tag?
+
 crossorigin attribute on a script tag specify that CORS is supported when loading from external script file 
 from third party server or domain. CORS is standard mechanism  used to retrieve files from other domains.
 
 ---
-- What is diference between React and ReactDOM
+- What is diference between React and ReactDOM?
+
 React and ReactDOM recently split into two different libraries. Prior to 0.14v all ReactDOM functionality was part of React.
 
 ReactDOM is glue between react and DOM. Often, you will only use it for one single thing: mounting with ``ReactDOM.render()``
@@ -69,6 +73,7 @@ React contains functionality utilized into both web and mobile apps. ReactDOM fu
 
 ---
 - What is difference between react.development.js and react.production.js files via CDN?
+
 react.development.js provides extra features like debugging, hot module reloading and lots of other stuff 
 that we need while development of the application.
 
