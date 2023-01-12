@@ -88,3 +88,10 @@ but you might to be carefull if you have dependent scripts to be fecthed because
 in case of defer attribute html parsing goes and script are fectched in parallel and these script are only executed when the html parsing is complete.
 
 ---
+
+- what is rel stylesheet in html e.g. 
+```<link rel="stylesheet" href="index.css" />``` ?
+
+The required rel attribute specifies the relationship between the current document and the linked document/resource.
+
+---
