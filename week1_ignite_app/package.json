@@ -1,0 +1,14 @@
+{
+  "name": "week1_ignite_app",
+  "version": "1.0.0",
+  "description": "Ignite App like create react app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mandeep Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
