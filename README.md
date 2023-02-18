@@ -1,7 +1,7 @@
 
 # Namaste React
 
-## week 1
+## ch 1 Inception
 
 - What is Emmet?
 
@@ -100,4 +100,194 @@ in case of defer attribute html parsing goes and script are fectched in parallel
 The required rel attribute specifies the relationship between the current document and the linked document/resource.
 
 ---
+## ch 2 Ignition App
 
+- What is NPM?
+
+NPM is a tool used for package management and it is a default package manager for node projects. NPM is installed when nodejs is installed on the machine. It comes with command-line Interface(CLI) used to interact with the online database of npm. This database is called npm regestry and it hosts public and private packages. To add or update package, we use the NPM cli to interact with this database.
+
+---
+
+- How to initialize npm?
+
+``` 
+npm init
+``` 
+`npm init -y` can be used to skip the setup steps, npm takes care of it and creates package.json file automatically, but without configuration.
+
+---
+
+- What is `Parcel/webpack` ? Why it is needed?
+
+Parcel/webpack is type of a web application bundler used for development and productions purposes or power aour apps with different type of cuntionalities and features
+It offer Blazing fast performance utilizing multicore functionality, and require zero configuration. Parcel can take any type of file as an entry point, but an HTML or Js file is a good place to start with.
+
+### Parcel Features 
+
+ * HMR(Hot Module replacement) - parcel keeps track of file changes via file watcher algorithm and renders the changes in the files
+ * File watcher algo(c++)
+ * compression 
+ * dev and production builds
+ * poly fills (replace variable names)
+ * port management
+ * minification
+ * bundling
+ * cleaning our code
+ * Image optimization
+ * super fast build algorithm
+ * cache while development
+ * compatibility with older browsers - it uses
+ * support Https in dev
+ * consistant hashing algo
+ * zero configuration
+
+### installation commands:
+- Install:
+```
+npm install -D parcel
+```
+`-D` is used for development and as a development dependecy.
+
+- Parcel commands :
+    - For development build:
+    ```
+    npx parcel <entry_point>
+    ```
+    - for production build :
+    ```
+    npx parcel build <entry_point>
+    ```
+
+---
+
+- what is `.parcel-cache`
+
+`.parcel-cache` is used by parcel(bundler) to reduce the building time. It stores information about your project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
+
+--- 
+
+- what is `npx`?
+
+`npx` is tool that is used to execute the packages. It comes with the npm, when you installed npm above 5.2.0 version then automatically npx will installed. It is an npm package runner that can execute any package that you want from the npm registry without even installing that package.
+
+--- 
+
+- what is the different between `dependencies` vs `devDependencies`?
+
+Dependencies should contain library and framework in which your app is built on, needs to function effectively. such as Vue, React, Angular, Express, Jquery etc
+DevDependencies should contain modules/package a developer a developer needs during development such as parcel,webpack,vite, mocha.
+These packages are necessary only while you are developing your project, not necessary on production.
+to save a dependecy as a devDepedency on installation we need to do, `npm install --save-dev` instead of just, `npm install --save`
+
+---
+
+- what is tree shaking?
+
+The shaking is process of removing the unwanted code that we do not use while developing the application. In computing, tree shaking is a dead code elimination technique that is applied when optimizing code.
+
+---
+
+- What is Hot module replacement?
+
+Hot module replacement (HMR) exchanges, adds, or removes modules while an applicaton is running, without a full reload. This can significantly speed up development in a few ways: retain application state which is lost during a full reload.
+
+---
+
+- List down your favorite 5 superpowers of parcel and describe any 3 of them in your own words.
+
+ * HMR - adds, or removes modules while an application is running, without a full reload.
+ * file watcher algorithm - file watchers monitor directories on file system and perform specific actions when desired files apprear.
+ * minification - minification is process of minimizing code and markup is your web pages and script files.
+ * Image optimization
+ * caching while development
+
+ ---
+
+ - what is `.gitignore`? what should we add and not into it?
+
+ The .gitignore file is a text file that tells Git which files or folders to ignore in a project during commit to the repository.
+ The types of files you should consider adding to a .gitignore file are any files that do not need to get committed. for example, package-lock.json should not add into your .gitignore files.
+
+ The entries in this file can also follow a pattern matching.
+ ```
+ * is used as a wildcard match
+ / is used to ignore pathnames relative to the .gitignore file
+ # is used to add comments to a .gitignore file
+ ```
+ Below are some example of what .gitignore file could look like:
+ ```
+ # Ignore Mac system files
+ .DS_store
+
+ # Ignore node_module folder
+ node_modules
+
+ # Ignore all text files
+ *.txt
+
+ # Ignore file related to API keys
+ .env
+
+ # Ignore SASS config files
+ .sass-cache
+ ```
+
+---
+
+- what is the difference between `package.json` and `package-lock.json`
+
+`package.json`
+* this file is mandatory for every project
+* It contains basic information about the project
+* application name/version/scripts
+
+`package-lock.json`
+* this file is automatically generated for those operatios where npm modifies either the node_module tree or package-json.
+* It is generated after an npm install
+* It allows future devs & automated systems to download the same dependencies as the project.
+* It also allows to go back to the past version of the dependencies without actual `committing the node_modules folder`
+* It records the same version of the installed packages which allows to reinstall them.
+
+Future install will be capable of building identical description tree.
+
+**~** or **^** in a `package.json` file:
+
+These are used with the version of package installed
+
+for example in `package.json` file:
+```
+"dependencies" : {
+    "react" : "^18.2.0",
+    "react-dom": "^18.2.0"
+}
+```
+
+* **~** : "approximately equivalent to version", will update you to all future patch versions, without incrementing the minor version.
+
+* **^** :  "Compatible with version", will update you to all future minor/patch versions, without incrementing the major version.
+
+> If none of them is present, that means only the version specified in `package.json` file is used in the development
+
+---
+
+- Why should I not modifiy `package-lock.json`?
+
+`package-lock.json` file contains the information about the dependencies and their versions used in the project. Deleting it would cause dependencies issues in the production environment. so dont modify it, it's being handle by npm automatically.
+
+---
+
+- what is `node_modules`? is it a good idea to push it on git?
+
+`node_modules` folder is like cache for the external modules required in the our project. when you npm install, they are downloaded from the web(npm registry) and copied into node_modules folder and nodejs is trained to look for them there when you import them(without a specific path). Dont push `node_modules` in github because it contains lots of files (more than 100 MBs) it will cost you memory and internet bandwidth. Node_module can we re-created using package-lock.json or package.json file easily.
+
+---
+
+- what is `dist` folder?
+
+The `/dist` folder contains  the minimized version of the source code. The code present in the `/dist` folder is actually the code which is used on the production web application. Along with the minified code, the `/dist` also comprises of the all compiled modules that may or may not be used with other systems.
+
+---
+
+- What is `browserslist`?
+
+Browserslist is tool that allows specifying which browsers should be supported in  your frontend app by specifying "queries" in a config file. Its used by frameworks/libraries such as React, Angular and Vue, but its not limited to them.

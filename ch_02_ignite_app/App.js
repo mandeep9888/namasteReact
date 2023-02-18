@@ -2,7 +2,7 @@
  * parcel supports( read documentation)
  * ---------------------
  * 
- * HMR - hot module replaement (reloading)
+ * HMR - hot module replacement (reloading)
  * File watcher algo(c++)
  * compression 
  * dev and production builds
