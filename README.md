@@ -1,4 +1,3 @@
-
 # Namaste React
 
 ## ch 1 Inception
@@ -7,11 +6,14 @@
 
 Emmet uses different abbreviations and short expression depending on what is passed and based upon that it dynamically convert abbreviations into full code.
 
-eg. inside html 
+eg. inside html
+
 ```
 ul>li.item$*5
-``` 
-will be converted into 
+```
+
+will be converted into
+
 ```
 <ul>
     <li class="item1"></li>
@@ -19,87 +21,96 @@ will be converted into
     <li class="item3"></li>
     <li class="item4"></li>
     <li class="item5"></li>
-</ul> 
+</ul>
 ```
+
 Emmet is built into vscode by default, and is mostly used for HTML, XML, and CSS, but it can also be used with programming languages.
 https://docs.emmet.io/abbreviations/syntax/
 
 ---
+
 - Difference between a Library and Framework?
 
-Both are written by developers to help us perform some common task, diference is in terms of 
+Both are written by developers to help us perform some common task, diference is in terms of
 inversion on control, when using library we are incharge on flow of the application we choose when and where to call
 library in our code.
 
-when using Framework, framework is incharge of flow of the application. It provides some places for us to plug in our code, 
+when using Framework, framework is incharge of flow of the application. It provides some places for us to plug in our code,
 but it calls our pluged in code as needed.
 
 eg: React is a library and Angular and Vue are the framework.
 
 ---
+
 - what is CDN? Why do we use it?
 
-Content delivery network(CDN) refer to a geographically distributed group of servers, which work together to provide 
+Content delivery network(CDN) refer to a geographically distributed group of servers, which work together to provide
 fast delivery of internet Content.
 
 CDN allows quick transfer of assets needed for loading Internet content incuding HTML pages, JS files, stylesheets, images and videos.
 Popularity of CDN are growing day by day, today majority of web traffic is served through CDNs.
 
 ---
+
 - Why is React known as React?
 
-'React' name was chosen because the library designed to allow developer to "react" to changes to state and constantly changing data within the application, and to update the user interface in 
+'React' name was chosen because the library designed to allow developer to "react" to changes to state and constantly changing data within the application, and to update the user interface in
 delarative and efficiant manner.
 When data in react components changes, react will automatically re-render the component so that it reflects the new data.
 
 ---
+
 - What is crossorigin in script tag?
 
-crossorigin attribute on a script tag specify that CORS is supported when loading from external script file 
-from third party server or domain. CORS is standard mechanism  used to retrieve files from other domains.
+crossorigin attribute on a script tag specify that CORS is supported when loading from external script file
+from third party server or domain. CORS is standard mechanism used to retrieve files from other domains.
 
 ---
+
 - What is diference between React and ReactDOM?
 
 React and ReactDOM recently split into two different libraries. Prior to 0.14v all ReactDOM functionality was part of React.
 
-ReactDOM is glue between react and DOM. Often, you will only use it for one single thing: mounting with ``ReactDOM.render()``
-Another useful feature of ReactDOM is ``ReactDOM.findDOMNode()`` which we can use it to gain direct access to DOM element.
+ReactDOM is glue between react and DOM. Often, you will only use it for one single thing: mounting with `ReactDOM.render()`
+Another useful feature of ReactDOM is `ReactDOM.findDOMNode()` which we can use it to gain direct access to DOM element.
 
 For Everything else mostly, there's react. You use React to define and create elements, for lifecycle hooks, etc i.e. guts of React application.
 
-The reason why React and ReactDOM were split into two different library was  due to arrival of ReactNative.
+The reason why React and ReactDOM were split into two different library was due to arrival of ReactNative.
 React contains functionality utilized into both web and mobile apps. ReactDOM functionality is only utilized only in web apps.
 
 ---
+
 - What is difference between react.development.js and react.production.js files via CDN?
 
-react.development.js provides extra features like debugging, hot module reloading and lots of other stuff 
+react.development.js provides extra features like debugging, hot module reloading and lots of other stuff
 that we need while development of the application.
 
-react.production.js has uglify and  minified version of react code which is more optimized to run on client machines. It makes  rendering of file on end user's browser very quick and performance enchancing.
- 
- The production and development build come into the picture just because of performance impact in real life deployed the application.
+react.production.js has uglify and minified version of react code which is more optimized to run on client machines. It makes rendering of file on end user's browser very quick and performance enchancing.
+
+The production and development build come into the picture just because of performance impact in real life deployed the application.
 
 ---
-- What is async and defer? 
 
-browser parses the html first and when it encounter a <script> tag its pauses parsing html and fetches the script from the internet 
+- What is async and defer?
+
+browser parses the html first and when it encounter a <script> tag its pauses parsing html and fetches the script from the internet
 and executes it then and there.
 
-when <script> tag has a asynch attribute its fetches the script asynchronusly parallel to html parcing and when these are fethes html parsing stops and  executes it then html parsing start again,
+when <script> tag has a asynch attribute its fetches the script asynchronusly parallel to html parcing and when these are fethes html parsing stops and executes it then html parsing start again,
 but you might to be carefull if you have dependent scripts to be fecthed because asynch attribute does not guarantee any order.
 
 in case of defer attribute html parsing goes and script are fectched in parallel and these script are only executed when the html parsing is complete.
 
 ---
 
-- what is rel stylesheet in html e.g. 
-``<link rel="stylesheet" href="index.css" />`` ?
+- what is rel stylesheet in html e.g.
+  `<link rel="stylesheet" href="index.css" />` ?
 
 The required rel attribute specifies the relationship between the current document and the linked document/resource.
 
 ---
+
 ## ch 2 Ignition App
 
 - What is NPM?
@@ -110,9 +121,10 @@ NPM is a tool used for package management and it is a default package manager fo
 
 - How to initialize npm?
 
-``` 
+```
 npm init
-``` 
+```
+
 `npm init -y` can be used to skip the setup steps, npm takes care of it and creates package.json file automatically, but without configuration.
 
 ---
@@ -122,41 +134,44 @@ npm init
 Parcel/webpack is type of a web application bundler used for development and productions purposes or power aour apps with different type of cuntionalities and features
 It offer Blazing fast performance utilizing multicore functionality, and require zero configuration. Parcel can take any type of file as an entry point, but an HTML or Js file is a good place to start with.
 
-### Parcel Features 
+### Parcel Features
 
- * HMR(Hot Module replacement) - parcel keeps track of file changes via file watcher algorithm and renders the changes in the files
- * File watcher algo(c++)
- * compression 
- * dev and production builds
- * poly fills (replace variable names)
- * port management
- * minification
- * bundling
- * cleaning our code
- * Image optimization
- * super fast build algorithm
- * cache while development
- * compatibility with older browsers - it uses
- * support Https in dev
- * consistant hashing algo
- * zero configuration
+- HMR(Hot Module replacement) - parcel keeps track of file changes via file watcher algorithm and renders the changes in the files
+- File watcher algo(c++)
+- compression
+- dev and production builds
+- poly fills (replace variable names)
+- port management
+- minification
+- bundling
+- cleaning our code
+- Image optimization
+- super fast build algorithm
+- cache while development
+- compatibility with older browsers - it uses
+- support Https in dev
+- consistant hashing algo
+- zero configuration
 
 ### installation commands:
+
 - Install:
+
 ```
 npm install -D parcel
 ```
+
 `-D` is used for development and as a development dependecy.
 
 - Parcel commands :
-    - For development build:
-    ```
-    npx parcel <entry_point>
-    ```
-    - for production build :
-    ```
-    npx parcel build <entry_point>
-    ```
+  - For development build:
+  ```
+  npx parcel <entry_point>
+  ```
+  - for production build :
+  ```
+  npx parcel build <entry_point>
+  ```
 
 ---
 
@@ -164,13 +179,13 @@ npm install -D parcel
 
 `.parcel-cache` is used by parcel(bundler) to reduce the building time. It stores information about your project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason why parcel can be so fast in development mode.
 
---- 
+---
 
 - what is `npx`?
 
 `npx` is tool that is used to execute the packages. It comes with the npm, when you installed npm above 5.2.0 version then automatically npx will installed. It is an npm package runner that can execute any package that you want from the npm registry without even installing that package.
 
---- 
+---
 
 - what is the different between `dependencies` vs `devDependencies`?
 
@@ -195,58 +210,63 @@ Hot module replacement (HMR) exchanges, adds, or removes modules while an applic
 
 - List down your favorite 5 superpowers of parcel and describe any 3 of them in your own words.
 
- * HMR - adds, or removes modules while an application is running, without a full reload.
- * file watcher algorithm - file watchers monitor directories on file system and perform specific actions when desired files apprear.
- * minification - minification is process of minimizing code and markup is your web pages and script files.
- * Image optimization
- * caching while development
+* HMR - adds, or removes modules while an application is running, without a full reload.
+* file watcher algorithm - file watchers monitor directories on file system and perform specific actions when desired files apprear.
+* minification - minification is process of minimizing code and markup is your web pages and script files.
+* Image optimization
+* caching while development
 
- ---
+---
 
- - what is `.gitignore`? what should we add and not into it?
+- what is `.gitignore`? what should we add and not into it?
 
- The .gitignore file is a text file that tells Git which files or folders to ignore in a project during commit to the repository.
- The types of files you should consider adding to a .gitignore file are any files that do not need to get committed. for example, package-lock.json should not add into your .gitignore files.
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project during commit to the repository.
+The types of files you should consider adding to a .gitignore file are any files that do not need to get committed. for example, package-lock.json should not add into your .gitignore files.
 
- The entries in this file can also follow a pattern matching.
- ```
- * is used as a wildcard match
- / is used to ignore pathnames relative to the .gitignore file
- # is used to add comments to a .gitignore file
- ```
- Below are some example of what .gitignore file could look like:
- ```
- # Ignore Mac system files
- .DS_store
+The entries in this file can also follow a pattern matching.
 
- # Ignore node_module folder
- node_modules
+```
+* is used as a wildcard match
+/ is used to ignore pathnames relative to the .gitignore file
+# is used to add comments to a .gitignore file
+```
 
- # Ignore all text files
- *.txt
+Below are some example of what .gitignore file could look like:
 
- # Ignore file related to API keys
- .env
+```
+# Ignore Mac system files
+.DS_store
 
- # Ignore SASS config files
- .sass-cache
- ```
+# Ignore node_module folder
+node_modules
+
+# Ignore all text files
+*.txt
+
+# Ignore file related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
+```
 
 ---
 
 - what is the difference between `package.json` and `package-lock.json`
 
 `package.json`
-* this file is mandatory for every project
-* It contains basic information about the project
-* application name/version/scripts
+
+- this file is mandatory for every project
+- It contains basic information about the project
+- application name/version/scripts
 
 `package-lock.json`
-* this file is automatically generated for those operatios where npm modifies either the node_module tree or package-json.
-* It is generated after an npm install
-* It allows future devs & automated systems to download the same dependencies as the project.
-* It also allows to go back to the past version of the dependencies without actual `committing the node_modules folder`
-* It records the same version of the installed packages which allows to reinstall them.
+
+- this file is automatically generated for those operatios where npm modifies either the node_module tree or package-json.
+- It is generated after an npm install
+- It allows future devs & automated systems to download the same dependencies as the project.
+- It also allows to go back to the past version of the dependencies without actual `committing the node_modules folder`
+- It records the same version of the installed packages which allows to reinstall them.
 
 Future install will be capable of building identical description tree.
 
@@ -255,6 +275,7 @@ Future install will be capable of building identical description tree.
 These are used with the version of package installed
 
 for example in `package.json` file:
+
 ```
 "dependencies" : {
     "react" : "^18.2.0",
@@ -262,9 +283,9 @@ for example in `package.json` file:
 }
 ```
 
-* **~** : "approximately equivalent to version", will update you to all future patch versions, without incrementing the minor version.
+- **~** : "approximately equivalent to version", will update you to all future patch versions, without incrementing the minor version.
 
-* **^** :  "Compatible with version", will update you to all future minor/patch versions, without incrementing the major version.
+- **^** : "Compatible with version", will update you to all future minor/patch versions, without incrementing the major version.
 
 > If none of them is present, that means only the version specified in `package.json` file is used in the development
 
@@ -284,10 +305,91 @@ for example in `package.json` file:
 
 - what is `dist` folder?
 
-The `/dist` folder contains  the minimized version of the source code. The code present in the `/dist` folder is actually the code which is used on the production web application. Along with the minified code, the `/dist` also comprises of the all compiled modules that may or may not be used with other systems.
+The `/dist` folder contains the minimized version of the source code. The code present in the `/dist` folder is actually the code which is used on the production web application. Along with the minified code, the `/dist` also comprises of the all compiled modules that may or may not be used with other systems.
 
 ---
 
 - What is `browserslist`?
 
-Browserslist is tool that allows specifying which browsers should be supported in  your frontend app by specifying "queries" in a config file. Its used by frameworks/libraries such as React, Angular and Vue, but its not limited to them.
+Browserslist is tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. Its used by frameworks/libraries such as React, Angular and Vue, but its not limited to them.
+
+---
+
+## ch 3 laying the foundation
+
+- what is `JSX`?
+
+JSX stand for javascript XML. JSX allows us to write HTML like syntax inside javascript and place it in the DOM without using createElement() and/or appendChild() methods. JSX makes it easier to write and add HTML in React. JSX converts HTML tags into react elements.
+
+Example : Without using JSX
+
+```
+const myElement = React.createElement('h1',{},"Namaste React");
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+```
+
+Example : With JSX
+
+```
+const myElement = <h1>Namaste React</h1>;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+```
+
+---
+
+- Superpowers of `JSX`
+
+Using JSX, you can write markup inside Javascript, providing you with a superpower to write logic and markup of a component inside a single .jsx file. JSX is easy to maintain, read and debug.
+
+Example
+
+```
+function greetings(user)
+{
+    //JSX
+    return <h1>{user}, Namaste react</h1>;
+}
+```
+
+---
+
+- Role of `type` attribute in script tag? What options can I use there?
+
+The `type` attribute specifies the type of the script. The Type attribute identifies the content between the `<script>` and `</script>` tags. It has a default value which is "text/javascript".
+
+`type` attribute can be of the following types:
+
+- `text/javascript` : It is the basic standard of writing javascript code inside the `<script>` tag.
+
+  ### Sytax
+
+  ```
+  <script type="text/javascript"></script>
+  ```
+
+- `text/ecmascript` : This value indicates that script is following the `EcmaScript` standards.
+- `module` : This value tells the browser that the script is a module that can import or export other files or modules inside it.
+- `text/babel`: This value indicates that the script is a babel type and required babel to transpile it.
+- `text/typescript`: As the name suggest script is writen in `Typescript`
+
+---
+
+- `{TitleComponent}` vs `{<TitleComponent/>}` vs `{<TitleComponent></TitleComponent>}` in `JSX`?
+
+The differece is stated below
+
+- `{TitleComponent}`: This value describes the `TitleCompoenent` as a javascript expression or a variable. The `{}` can be embed javascript expression or a variable inside it.
+- `<TitleComponent/>`: This value represent a component that is basically returning some JSX value. In simple terms `TitleComponent` a function that is returing a JSX value. A component is written inside the `{<    />}` expression.
+- `{<TitleComponent></TitleComponent>}`: `<TitleComponent/>`and `<TitleComponent></TitleComponent>` are equivalent only when `<TitleComponent/>`has no child components. The opening and closing tags are created to inclue the child components.
+
+### example
+
+```
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
+```
